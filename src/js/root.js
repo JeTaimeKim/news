@@ -15,13 +15,13 @@ export default class Root extends React.Component{
     return(
     <div>
       <MediaQuery query='(min-device-width:1224px)'>
-        <BrowserRouter>
+        <HashRouter>
             <Switch>
               <Route path="/" exact component={PCIndex}></Route>
               <Route path="/details/:uniquekey" component={PCNewsDetails}></Route>
               <Route path="/usercenter" component={PCUserCenter}></Route>
             </Switch>
-          </BrowserRouter>
+          </HashRouter>
      
       </MediaQuery>
       <MediaQuery query='(max-device-width:1224px)'>
