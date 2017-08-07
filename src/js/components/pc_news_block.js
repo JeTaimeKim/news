@@ -1,6 +1,7 @@
 import React from 'react';
 import{Card} from 'antd';
 import {BrowserRouter as Router,HashRouter,Link,BrowserRouter,history} from 'react-router-dom';
+import jsonp from '../common/commonJson';
 
 export default class PCNewsBlock extends React.Component{
   constructor(){
@@ -11,7 +12,7 @@ export default class PCNewsBlock extends React.Component{
   }
 
   componentWillMount(){
-    var myFetchOptions={
+var myFetchOptions={
       method:'GET'
     };
     fetch('http://newsapi.gugujiankong.com/Handler.ashx?action=getnews&type='+this.props.type+
@@ -19,6 +20,7 @@ export default class PCNewsBlock extends React.Component{
     .then(response=>response.json())
     .then(json=>this.setState({news:json}));
   };
+
 
   render(){
 

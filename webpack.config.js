@@ -1,6 +1,5 @@
 var debug = process.env.NODE_ENV !== "production";
 var webpack=require('webpack');
-var proxy = require('http-proxy-middleware');
 var path=require('path');
 
 const context = [`/login`, `/admin/*`];
@@ -8,9 +7,8 @@ const context = [`/login`, `/admin/*`];
 module.exports={
 	devServer:{
 		historyApiFallback:true,
-		host: 'localhost',
-    port: '3011',
-    proxy: {"/api": "http://newsapi.gugujiankong.com"}
+		host: 'localhost'
+    
 		// {
 		// 	index:'/'
 		// },
